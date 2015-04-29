@@ -1,0 +1,43 @@
+*{margin: 0px; padding: 0px;}
+
+body{
+	margin: 0px auto;
+}
+
+
+
+#boxs{
+	width: 95%;
+	height: auto;
+	margin: 0px auto;
+}
+
+.pin{
+		position: relative;
+	border: 1px solid #ccc;
+	padding: 5px;
+	width: 155px;
+	border-radius: 5px;
+	margin: 5px;
+	float: left;
+	box-shadow: 0 0 6px #ccc;
+
+}
+
+.pin img{
+	width: 100%;
+}
+
+.clear{
+	clear: both;
+}
+
+@media screen and (min-width: 600px) {
+.pin{
+ 	width: 290px;
+ }
+}
+
+
+
+
