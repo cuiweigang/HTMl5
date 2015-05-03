@@ -1,0 +1,120 @@
+/*公共部分 start*/
+blockquote, body, button, dd, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, select, td, textarea, th, ul,a {
+margin:0px;
+    padding: 0px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Verdana, "Lantinghei SC", "Hiragino Sans GB", "Microsoft Yahei", Helvetica, arial, \5b8b\4f53, sans-serif
+}
+
+a{
+    text-decoration: none;
+    font-size: 12px;
+    color:#000000;
+}
+
+body{
+    background-color: #fff;
+}
+/*公共部分 end*/
+
+#header {
+    min-height: 60px;
+    margin: 0 auto;
+    padding: 10px 0
+}
+
+#header > .wrap {
+    position: relative;
+    z-index: 1200
+}
+
+.w-1000{
+    width:1000px;
+    
+}
+
+#header .logo {
+    float: left;
+    width: 113px;
+    margin-top: 5px
+}
+
+.search-section{
+    padding: 5px;
+    position: absolute;
+    left: 29%;
+    margin-top: 5px;
+}
+
+.search-section input
+{
+    padding: 5px 10px;
+   height: 35px;
+    border: 1px solid #ccc;
+}
+.search-section .search-text
+{
+    width:380px;
+
+}
+
+.search-section .search-bth
+{
+background-color: #FFFFFF;
+    padding: 0px 10px;
+}
+
+.hot-words{
+
+}
+
+.hot-words{
+    position: absolute;
+    top: 15px;
+    right: 71px;
+}
+
+.hot-words a{
+    text-decoration: none;
+    display: block;
+    float: left;
+    background-color: #cccccc;
+    font-size: 12px;
+    margin-left: 2px;
+    color:gray;
+    background: #f3f3f3;
+}
+
+
+.hot-words a:hover{
+    color:#ccc;
+}
+
+.userMenu{
+    float: right;
+    margin: 10px;
+    font-size: 16px;
+}
+
+
+.userMenu-menu ul{
+    list-style: none;
+    background: #ffffff;
+    border:1px solid    #ccc;
+    width: 100px;
+
+}
+
+.userMenu-menu ul a{
+    /*display: block;*/
+    /*background-color: #cccccc;*/
+    display: block;
+    width: 100%;
+    height: 20px;
+    padding: 2px 0px 0px 5px;
+}
+
+.userMenu-menu li a:hover{
+    background-color: #cccccc;
+}
