@@ -1,0 +1,105 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 14px;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.container {
+    max-width: 640px;
+    min-width: 320px;
+    height: auto;
+    margin: 0px auto;
+}
+
+.container .picture img{
+    width: 100%;
+    height: auto;
+}
+
+.container .title {
+    padding: 5px 10px;
+    font-size: 18px;
+    font-family: "宋体";
+}
+
+.container .price {
+    margin-top: 10px;
+    margin:10px;
+}
+
+.container .price span {
+    display: inline-block;
+    width: 50%;
+}
+
+.container .price span:first-child i {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff5c00;
+}
+
+.container .price span:last-child {
+    text-align: right;
+    padding-right: 30px;
+}
+
+.message {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.message .user img {
+    float: left;
+    height: 80px;
+    border-radius: 50px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.message .user_name {
+    padding-top: 20px;
+}
+
+.message .user .user_name p:first-child {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.message .user .user_name p:last-child {
+    font-size: 16px;
+}
+
+.message .message_info {
+    clear: both;
+    padding: 10px 20px;
+}
+
+.button img{
+    width:20px;
+    vertical-align: middle;
+}
+.button{
+    display:-moz-box; /* Firefox */
+    display:-webkit-box; /* Safari and Chrome */
+    width:100%;
+    margin-bottom: 10px;
+}
+
+.button a {
+    display: block;
+    -webkit-box-flex: 1.0;
+    text-align: center;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px;
+    background: #ff5c00;
+    border-radius: 3px;
+    text-decoration: none;
+    }
+
+
