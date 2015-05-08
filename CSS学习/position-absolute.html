@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-Type" content="text/html" charset="utf-8">
+	<title>绝对定位</title>
+	<style type="text/css">
+body{
+    margin:20px;
+    font-family:Arial;
+    font-size:12px;
+}
+#father{
+    background-color:#a0c8ff;
+    border:1px dashed #000000;
+    padding:15px;
+    position: relative;
+}
+#father div{
+    background-color:#fff0ac;
+    border:1px dashed #000000;
+    padding:10px;
+}
+#block2{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+p{
+	text-indent: 2em;
+	font-size: 16px;
+	line-height: 20px;
+}
+	</style>
+
+</head>
+<body>
+<div id="father">
+	<div>Box-1</div>
+	<div id="block2">Box-2</div>
+	<div>Box-3</div>
+</div>
+
+<p>
+	对于绝对定位的描述为：使用绝对定位的盒子以它的“最近”的一个“已经定位”的“祖先元素”为基准进行偏移。如果没有已经定位的祖先元素，那么会以浏览器窗口为基准进行定位。再有，绝对定位的框从标准流中脱离，这意味着它们对其后的兄弟盒子的定位没有任何影响，其他的盒子就好像这个盒子不存在一样。
+</p>
+</body>
+</html>
