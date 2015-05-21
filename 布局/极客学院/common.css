@@ -1002,7 +1002,7 @@ img, input, label, select {
     top: 12px
 }
 
-/*.gotop a.qq-online:hover{background:#f7f7f7 url(../images/kfu2.png) center center no-repeat}*/
+/*.gotop a.qq-online:hover{background:#f7f7f7 url(../imgs/kfu2.png) center center no-repeat}*/
 .gotop a.qq-online:hover .kefu {
     display: block
 }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6f9fc;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 400px;
+            height: auto;
+            border: 1px solid #aab4bc;
+        }
+
+        .header {
+            width: 100%;
+            height: 25px;
+            background: url("down_list_h2_bg.gif");
+        }
+
+        h2 {
+            line-height: 25px;
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .down {
+            background: url("down.gif") no-repeat 380px center;
+        }
+
+        .up {
+            background: url("up.gif") no-repeat 380px center;
+        }
+
+        ul, li {
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+
+        a {
+            padding-left: 20px;
+            color: #6b7980;
+            line-height: 30px;
+            text-decoration: none;
+            display: block;
+        }
+
+        a:hover {
+            background-color: #ffffff;
+            text-decoration: underline;
+
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("header").onclick = function () {
+                var oUl = document.getElementsByTagName("ul")[0];
+                if (oUl.offsetHeight > 0) {
+                    document.getElementById("up").className = "up";
+                    oUl.style.display = "none";
+                }
+                else {
+                    document.getElementById("up").className = "down";
+                    oUl.style.display = "block";
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="header" id="header">
+        <h2 id="up" class="down">播放列表</h2>
+    </div>
+    <ul>
+        <li><a href="#">玩爱之徒 - 蔡依林</a></li>
+        <li><a href="#">玩爱之徒 - 蔡依林</a></li>
+        <li><a href="#">玩爱之徒 - 蔡依林</a></li>
+        <li><a href="#">玩爱之徒 - 蔡依林</a></li>
+        <li><a href="#">玩爱之徒 - 蔡依林</a></li>
+    </ul>
+</div>
+</body>
+</html>

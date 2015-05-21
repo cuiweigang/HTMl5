@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+
+/*        var dict = new Array();
+        dict["name"] = "cui";
+        dict["age"] = 20;
+
+        // 可以遍历数组
+        for (var item in dict) {
+            console.log(item + ":" + dict[item]);
+        }  // result name:cui
+           //        age:20
+
+        console.log(dict.length); // result 0
+        console.log(JSON.stringify(dict)); // result []*/
+
+    </script>
+
+    <script type="text/javascript">
+        var dict = {};
+        dict["name"] = "cui";
+        dict["age"] = 20;
+
+        console.log(dict.length);  // result undefind
+        console.log(JSON.stringify(dict)); // {"name":"cui","age":20}
+
+        for(var item in dict)
+        {
+            console.log(item + ":" + dict[item]);
+        } // result name:cui age:20
+       
+
+        console.log("name:" + dict["name"]);  // name:cui
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

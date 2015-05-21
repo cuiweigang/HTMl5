@@ -8,50 +8,78 @@
 		<script src="js/mui.min.js"></script>
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<script type="text/javascript" charset="utf-8">
-			mui.init();
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
 			mui.plusReady(function() {
 				// 扩展API加载完毕，现在可以正常调用扩展API
 				plus.contacts.getAddressBook(plus.contacts.ADDRESSBOOK_PHONE, function(addressbook) {
 					addressbook.find(["displayName", "phoneNumbers"], function(items) {
-						console.log(JSON.stringify(items));
-						rederPhones(items);
+						renderPhones(items);
+						bindEvent();
 					});
 				}, function(e) {
 					alert("Get address book failed: " + e.message);
 				});
 			});
-
-			function rederPhones(items) {
-				var ul = document.getElementById("phones");
-				for (var i = 0; i < items.length; i++) {
-					var item = items[i];
-					if (!item.displayName || item.phoneNumbers == null || item.phoneNumbers.length <= 0) {
-						continue;
+			 //渲染电话信息
+			function renderPhones(items) {
+					var ul = document.getElementById("phones");
+					for (var i = 0; i < items.length; i++) {
+						var item = items[i];
+						if (!item.displayName || item.phoneNumbers == null || item.phoneNumbers.length <= 0) {
+							continue;
+						}
+						var li = document.createElement("li");
+						li.className = "mui-table-view-cell";
+						//create A tag
+						var a = document.createElement("a");
+						a.className = "mui-navigate-right";
+						a.href = "#";
+						a.id = item.id;
+						a.innerText = item.displayName + "(" + item.phoneNumbers[0].value + ")";
+						li.appendChild(a);
+						ul.appendChild(li);
 					}
-					var li = document.createElement("li");
-					li.className = "mui-table-view-cell";
-					var a=document.createElement("a");
-					a.className="mui-navigate-right";
-					a.href="#";
-					a.text=items[i].displayName + "(" + item.phoneNumbers[0].value + ")";
-					li.appendChild(a);
-
-					ul.appendChild(li);
 				}
+				/**
+				 * 绑定事件
+				 */
+
+			function bindEvent() {
+				var nodes = document.getElementsByClassName("mui-navigate-right");
+				for (var i = 0; i < nodes.length; i++) {
+					var node = nodes[i];
+					node.addEventListener("tap", function() {
+						//plus.webview.create("detail.html",{},{phoneid:this.id}).show("slide-in-right");
+						mui.openWindow({
+							url: "detail.html",
+							extras: {
+								tid: this.id
+							},
+							show: {
+								autoShow: true,
+								aniShow: "slide-in-right"
+							}
+						})
+					});
+				}
+			}
+
+			function closeWindow() {
+				plus.webview.currentWebview().close();
 			}
 		</script>
 	</head>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" onclick="closeWindow()"></a>
 			<h1 class="mui-title">通讯录</h1>
 		</header>
 		<div class="mui-content">
 			<ul class="mui-table-view" id="phones">
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">Item 2 </a>
-				</li>
+
 			</ul>
 		</div>
 	</body>
